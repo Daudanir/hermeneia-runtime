@@ -1,0 +1,107 @@
+{
+  "name": "Hermeneia Remote Runtime",
+  "version": "5.0.0",
+  "format": "classic-global",
+  "entry": "app",
+  "modules": [
+    {
+      "id": "lexicon",
+      "file": "modules/lexicon.js",
+      "integrity": "sha384-YkeyQdjDUZZ28NY1ww0QcCOH9Dk4JqE4BR/2Uw7gbqL0WZipHj79IQvKmTNm9MhP",
+      "deps": []
+    },
+    {
+      "id": "cache",
+      "file": "modules/cache.js",
+      "integrity": "sha384-LU+WS41UcyP6eK53tAGt3UDerOkUzHvT/7wcDK8T/w62N0+Ljv7GfjPKutxux0g5",
+      "deps": []
+    },
+    {
+      "id": "core",
+      "file": "modules/core.js",
+      "integrity": "sha384-WFlYJBKi06xvK6dV6ZiGxAQnKKnxqtDuVcQbXyMIEljRbk6Zq7i9LT3MO/Hk33/1",
+      "deps": [
+        "lexicon"
+      ]
+    },
+    {
+      "id": "deep-parser",
+      "file": "modules/deep-parser.js",
+      "integrity": "sha384-66k0ru0l6ySG1O92fQFVXJB/L7xp8c/msbcFVbr25aodHaKd3XAyLVQs4Uvjc8MZ",
+      "deps": [
+        "core",
+        "ambiguo"
+      ]
+    },
+    {
+      "id": "realizer",
+      "file": "modules/realizer.js",
+      "integrity": "sha384-VO8yBIviodH0u7xBvcVD8mOUPouoQTpDMuI/lT6IBEodOJ7/e73+zYy/olll8y7Y",
+      "deps": [
+        "core",
+        "lexicon"
+      ]
+    },
+    {
+      "id": "ambiguo",
+      "file": "modules/ambiguo.js",
+      "integrity": "sha384-iEQWhcQh99DgWW73kfhJZViE4IDtEQYWOwmPgC9ZAi7Hsln3e0VUN9MHgNNV9nty",
+      "deps": [
+        "core"
+      ]
+    },
+    {
+      "id": "redator",
+      "file": "modules/redator.js",
+      "integrity": "sha384-TuRSDf4ddbyGsfiIWI3giYVuf6588OPkkjLQBjPWWIPwZWpyDxrAdmKijiIcbBpe",
+      "deps": [
+        "core"
+      ]
+    },
+    {
+      "id": "ai",
+      "file": "modules/ai.js",
+      "integrity": "sha384-0IJXjC1YOqEtcub4bQitGQhPfxpS8AM4o9XrscpSUSrWRT2xqkmkxQxFuK+yUUGD",
+      "deps": []
+    },
+    {
+      "id": "hypothesis",
+      "file": "modules/hypothesis.js",
+      "integrity": "sha384-CbdQvSa8Z706OWmFmFT80qrMyDAJFtCWvxx4HHSIW2Tk0wx9J1jKZBtNZIULEXrK",
+      "deps": [
+        "core"
+      ]
+    },
+    {
+      "id": "app",
+      "file": "modules/app.js",
+      "integrity": "sha384-7bgnMhlwcuDQiJBH/90LrErkC2JlFnqMCDviHHaVrAb59KngftPpKNl2m83G86oR",
+      "deps": [
+        "lexicon",
+        "cache",
+        "core",
+        "ambiguo",
+        "deep-parser",
+        "realizer",
+        "redator",
+        "ai",
+        "hypothesis"
+      ]
+    }
+  ],
+  "presets": {
+    "full": [
+      "lexicon",
+      "cache",
+      "core",
+      "deep-parser",
+      "realizer",
+      "ambiguo",
+      "redator",
+      "ai",
+      "hypothesis",
+      "app"
+    ]
+  },
+  "notes": "Scripts clássicos globais, carregados em ordem pelo microkernel do index.html. Use HTTPS."
+}
